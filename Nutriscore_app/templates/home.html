@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- donner un titre à la page -->
+    <title>Calculateur de nutriscore</title>
+    
+</head>
+<body>
+    <!-- définir le contenu de la page -->
+    
+    <h1>Découvrez le nutriscore de vos plats!</h1>
+    <!--
+    <form action="/my-handling-form-page" method="post">
+    nous on veut l'envoyer en sur /-->
+
+    <form action="/" method="post">
+        
+        <ul style="list-style: none;">
+
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="energy-100g" placeholder="Energie pour 100g (kJ)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="energy-kcal_100g" placeholder="Energie pour 100g (kcal)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="fat_100g" placeholder="Total de Matières grasses pour 100g (g)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="saturated-fat_100g" placeholder="Acides gras saturés pour 100g (g) (inclus dans les matières grasses)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="carbohydrates_100g" placeholder="Total des glucides pour 100g (g)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="sugar_100g" placeholder="Sucres pour 100g (g) (inclus dans les glucides)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="proteins_100g" placeholder="Fibres alimentaires pour 100g (g)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="proteins_100g" placeholder="Protéines pour 100g (g)" style='width:450px' step="0.01"></li>
+        <li><input type ="number" pattern = "(\d*)(\.)*(\d+)" name="salt_100g" placeholder="Sel pour 100g (g)" style='width:450px' step="0.01"></li>
+        
+        </ul>
+
+        <button type="submit">Envoyer</button>
+    </form>
+    
+    {% if void_get %}
+    <p>Vous devez rentrer au moins une valeur!</p>
+    {% endif %}
+
+    {% if inc_list %}
+    <p>Les valeurs manquantes peuvent influencer la prédiction</p>
+    {% endif %}
+
+
+    {% if y_pred == 'a' %}
+    <!-- c'est de la syntaxe Jinja -->
+    <p><img src="./static/Nutri-score-A.svg" alt=""></p>
+    {% endif %}
+
+    {% if y_pred == 'b' %}
+    <!-- c'est de la syntaxe Jinja -->
+    <p><img src="./static/Nutri-score-B.svg" alt=""></p>
+    {% endif %}
+
+    {% if y_pred == 'c' %}
+    <!-- c'est de la syntaxe Jinja -->
+    <p><img src="./static/Nutri-score-C.svg" alt=""></p>
+    {% endif %}
+
+    {% if y_pred == 'd' %}
+    <!-- c'est de la syntaxe Jinja -->
+    <p><img src="./static/Nutri-score-D.svg" alt=""></p>
+    {% endif %}
+
+    {% if y_pred == 'e' %}
+    <!-- c'est de la syntaxe Jinja -->
+    <p><img src="./static/Nutri-score-E.svg" alt=""></p>
+    {% endif %}
+
+</body>
+</html>
